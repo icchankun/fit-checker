@@ -51,18 +51,13 @@ const { gender, height, weight } = await prompt([
   },
 ]);
 
-if (age >= ADULT_AGE) {
-  const adult = new Adult(height, weight);
-  adult.showBodyInfo({
-    obesity: adult.checkObesity(),
-    appropriateWeight: adult.appropriateWeight,
-    weightDiff: adult.calcWeightDiff(adult.weight, adult.appropriateWeight),
-  });
-} else {
-  const child = new Child(height, weight, age, gender);
-  child.showBodyInfo({
-    obesity: child.checkObesity(),
-    appropriateWeight: child.appropriateWeight,
-    weightDiff: child.calcWeightDiff(child.weight, child.appropriateWeight),
-  });
-}
+const human =
+  age >= ADULT_AGE
+    ? new Adult(height, weight)
+    : new Child(height, weight, age, gender);
+
+human.showBodyInfo({
+  obesity: human.checkObesity(),
+  appropriateWeight: human.appropriateWeight,
+  weightDiff: human.calcWeightDiff(human.weight, human.appropriateWeight),
+});
