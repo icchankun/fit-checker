@@ -1,6 +1,6 @@
 {
   "name": "@icchankun/fit-checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This measures and evaluates obesity based on height and weight.",
   "type": "module",
   "main": "./index.js",
