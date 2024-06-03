@@ -2,11 +2,10 @@ import Human from "./human.js";
 import { adultObesityMap } from "./obesity-map.js";
 
 export default class Adult extends Human {
-  #appropriateWeight;
   constructor(height, weight) {
     super(height, weight);
     this.height = this.convertCmToM(height);
-    this.#appropriateWeight = this.calcAppropriateWeight();
+    this.appropriateWeight = this.calcAppropriateWeight();
   }
   convertCmToM(height) {
     return height / 100;
@@ -20,12 +19,5 @@ export default class Adult extends Human {
   checkObesity() {
     const bmi = this.calcBmi();
     return adultObesityMap(bmi);
-  }
-  showBodyInfo() {
-    super.showBodyInfo({
-      obesity: this.checkObesity(),
-      appropriateWeight: this.#appropriateWeight,
-      weightDiff: super.calcWeightDiff(this.weight, this.#appropriateWeight),
-    });
   }
 }
