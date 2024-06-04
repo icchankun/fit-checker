@@ -10,7 +10,7 @@ export default class Human {
   #calcWeightDiff(weight, appropriateWeight) {
     return (weight - appropriateWeight).toFixed(2);
   }
-  showBodyInfo() {
+  showBodyCondition() {
     const obesity = this.checkObesity();
     const appropriateWeight = this.appropriateWeight;
     const weightDiff = this.#calcWeightDiff(this.weight, appropriateWeight);

@@ -67,4 +67,4 @@ const human =
     ? new Adult(height, weight)
     : new Child(height, weight, age, gender);
 
-human.showBodyInfo();
+human.showBodyCondition();
