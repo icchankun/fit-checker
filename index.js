@@ -67,8 +67,4 @@ const human =
     ? new Adult(height, weight)
     : new Child(height, weight, age, gender);
 
-human.showBodyInfo({
-  obesity: human.checkObesity(),
-  appropriateWeight: human.appropriateWeight,
-  weightDiff: human.calcWeightDiff(human.weight, human.appropriateWeight),
-});
+human.showBodyInfo();
